@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+
+hooks:
+   Application:
+      -  location: scripts/stop_cont.sh
+         timeout: 300
+         runas: root
+   ApplicationStart:
+      -  location: scripts/start_cont.sh
+         timeout: 300
+         runas: root

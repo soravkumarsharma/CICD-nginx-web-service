@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+ 
 #Pull the docker image from the dockerHub.
 docker pull soravkumarsharma/nginx-staticwebpage:latest
 

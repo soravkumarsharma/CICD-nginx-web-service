@@ -1,0 +1,16 @@
+version: 0.2
+
+env:
+  parameter-store:
+      DOCKER_REGISTRY_USERNAME: /my-app/docker-registry/username
+      DOCKER_REGISTRY_PASSWORD: /my-app/docker-registry/password
+      DOCKER_REGISTRY_URL: /my-app/docker-registry/url
+phases:
+  build:
+    commands:
+       - docker build -t "$DOCKER_REGISTRY_URL/DOCKER_REGISTRY_USERNAME/nginx-staticwebpage:latest" .
+       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
+       - docker push $DOCKER_REGISTRY_URL/DOCKER_REGISTRY_USERNAME/nginx-staticwebpage:latest
+  post_build:
+    commands:
+       - echo "Build is Successful"

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 DOCKERHUB_USERNAME="soravkumarsharma"
 DOCKER_IMAGE="nginx-cicd"
 DOCKERFILE_PATH=""
@@ -21,13 +19,7 @@ cd "$temp_dir/$DOCKERFILE_PATH"
 docker build -t "$DOCKERHUB_USERNAME/$DOCKER_IMAGE" .
 
 echo "-------------Docker Run-------------"
-if docker ps -q --filter "name=$DOCKER_CONT_NAME" >/dev/null; then
-    echo "Stopping and removing the running container..."
-    docker container stop "$DOCKER_CONT_NAME"
-    docker container rm -f "$DOCKER_CONT_NAME"
-else
-    echo "No running container with the name $DOCKER_CONT_NAME found."
-fi
+docker container rm -f "$DOCKER_CONT_NAME"
 docker run -d -p 80:80 --name "$DOCKER_CONT_NAME" "$DOCKERHUB_USERNAME/$DOCKER_IMAGE:latest"
 
 echo "-------------CleanUp the Workspace-------------"

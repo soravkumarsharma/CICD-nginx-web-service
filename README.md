@@ -1,4 +1,11 @@
 <div align="center">
-  (Read the full blog)[https://soravks.hashnode.dev/automated-web-deployment-and-python-webhook-creation-simplifying-your-development-workflow]
-  ![image](https://github.com/soravkumarsharma/CICD-nginx-web-service/assets/77971771/e1a5700f-a2fc-47dd-b2bd-d859b671c81f)
+
+# Simplifying Your Development Workflow
+
+[Detailed Blog](https://soravks.hashnode.dev/automated-web-deployment-and-python-webhook-creation-simplifying-your-development-workflow)
+
 </div>
+
+![image](https://github.com/soravkumarsharma/CICD-nginx-web-service/assets/77971771/59a593da-4998-43b8-9770-ef8fa598eb9d)
+
+
